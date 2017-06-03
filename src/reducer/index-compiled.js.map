@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;AAGA;;AACA;;;;;;AAJA;;;kBAMe,4BAAgB;AAC3B;AAD2B,CAAhB,C","file":"index-compiled.js","sourcesContent":["/**\r\n * Created by Administrator on 2017/6/3 0003.\r\n */\r\nimport { combineReducers } from 'redux';\r\nimport leftReducer from \"./left\"\r\n\r\nexport default combineReducers({\r\n    leftReducer\r\n})"]}

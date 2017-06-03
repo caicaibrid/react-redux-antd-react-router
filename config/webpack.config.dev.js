@@ -9,7 +9,7 @@ var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeMod
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
 
-const pxtorem = require('postcss-pxtorem');
+
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -41,8 +41,8 @@ module.exports = {
     // Note: instead of the default WebpackDevServer client, we use a custom one
     // to bring better experience for Create React App users. You can replace
     // the line below with these two lines if you prefer the stock client:
-    // require.resolve('webpack-dev-server/client') + '?/',
-    // require.resolve('webpack/hot/dev-server'),
+    require.resolve('webpack-dev-server/client') + '?/',
+    require.resolve('webpack/hot/dev-server'),
     require.resolve('react-dev-utils/webpackHotDevClient'),
     // We ship a few polyfills by default:
     require.resolve('./polyfills'),
@@ -75,8 +75,7 @@ module.exports = {
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    modulesDirectories: ['node_modules', paths.path.join(__dirname, '../node_modules')],
-    extensions: ['.web.js', '.js', '.json', '.jsx', ''],
+    extensions: ['.js', '.json', '.jsx', ''],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -166,11 +165,6 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
-      {
-        test: /\.(svg)$/i,
-        loader: 'svg-sprite',
-        include:  [require.resolve('antd-mobile').replace(/warn\.js$/, '')] //把 svgDirs 路径下的所有 svg 文件交给 svg-sprite-loader 插件处理
-      },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]
@@ -186,10 +180,6 @@ module.exports = {
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
-      }),
-      pxtorem({
-        rootValue: 100,
-        propWhiteList: [],
       })
     ];
   },

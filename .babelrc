@@ -6,7 +6,7 @@
   ],
   "plugins": [
       ["import",{
-        "libraryName": "antd-mobile",
+        "libraryName": "antd",
         "style": "css"
       }],
       ["transform-runtime", {

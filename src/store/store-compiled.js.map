@@ -1,0 +1,1 @@
+{"version":3,"sources":["store.js"],"names":[],"mappings":";;;;;;AAGA;;AACA;;;;;;AAJA;;;kBAMe,uC","file":"store-compiled.js","sourcesContent":["/**\r\n * Created by Administrator on 2017/6/3 0003.\r\n */\r\nimport {createStore} from \"redux\"\r\nimport collapsedReducer from \"../reducer/left\"\r\n\r\nexport default createStore(collapsedReducer);"]}

@@ -1,4 +1,5 @@
 import React,{Component} from "react"
+import { DatePicker } from 'antd';
 
 class Button extends Component{
 	static defaultProps  = {
@@ -31,7 +32,12 @@ class Button extends Component{
 		console.log("componentDidMount = Dom 已经渲染完毕,可以在此发起ajax请求,操作dom -----子组件")
 	}
 	render (){
-		return (<div id={this.props.id} data-count={this.props.count} >{this.props.count}</div>)
+		return (
+			<div id={this.props.id} data-count={this.props.count} >
+				{this.props.count}
+				<DatePicker />
+			</div>
+		)
 	}
 }
 

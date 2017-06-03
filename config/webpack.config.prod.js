@@ -9,9 +9,6 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
-const pxtorem = require('postcss-pxtorem');
-
-
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -80,8 +77,7 @@ module.exports = {
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    modulesDirectories: ['node_modules', paths.path.join(__dirname, '../node_modules')],
-    extensions: ['.web.js', '.js', '.json', '.jsx', ''],
+    extensions: ['.js', '.json', '.jsx', ''],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -186,10 +182,6 @@ module.exports = {
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
-      }),
-      pxtorem({
-        rootValue: 100,
-        propWhiteList: [],
       })
     ];
   },
