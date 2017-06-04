@@ -2,8 +2,9 @@ import React, {Component} from "react"
 import {Layout, Menu, Icon} from 'antd';
 const {Sider} = Layout;
 const SubMenu = Menu.SubMenu;
-import { collapsed_status } from  '../actions/left_slide'
+import { collapsed_status } from  '../../../actions/left_slide'
 import { connect } from 'react-redux'
+import "./left.css"
 
 class Left extends Component {
     state={
@@ -64,8 +65,8 @@ class Left extends Component {
 }
 
 function mapStateToProps(reducerAll){
-    let {leftReducer} = reducerAll
-    return leftReducer
+    let {collapsed} = reducerAll;
+    return collapsed
 }
 
 export default connect(mapStateToProps)(Left)

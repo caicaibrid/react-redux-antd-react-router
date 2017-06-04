@@ -8,7 +8,6 @@ let initCollapsed = {
 }
 
 export default function (state=initCollapsed,action) {
-    console.log(action,"reducer")
     switch (action.type){
         case COLLAPSED_STATE_SHOW:
             return Object.assign({},action)

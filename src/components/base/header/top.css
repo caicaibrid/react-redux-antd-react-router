@@ -1,0 +1,13 @@
+.login-status{
+    line-height: 64px;
+}
+.login-status img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.ant-menu-submenu-horizontal > .ant-menu{
+    right: 0;
+    left: auto;
+}

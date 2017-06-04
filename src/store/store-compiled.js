@@ -1,9 +1,8 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-exports.default = configureStore;
 
 var _redux = require('redux');
 
@@ -17,14 +16,16 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var middlewares = [_reduxThunk2.default]; /**
-                                           * Created by Administrator on 2017/6/3 0003.
-                                           */
+/*
 
-var createStoreWithMiddleware = _redux.applyMiddleware.apply(undefined, middlewares)(_redux.createStore);
+const middlewares = [thunk]
+const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore)
 
-function configureStore(initialState) {
-  return createStoreWithMiddleware(_index2.default, initialState);
-}
+export default function configureStore(initialState){
+    return createStoreWithMiddleware(rootReducer,initialState)
+}*/
+exports.default = (0, _redux.createStore)(_index2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default)); /**
+                                                                                                                * Created by Administrator on 2017/6/3 0003.
+                                                                                                                */
 
 //# sourceMappingURL=store-compiled.js.map
