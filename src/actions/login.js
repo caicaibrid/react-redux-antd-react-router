@@ -17,9 +17,7 @@ export function getLoginState() {
         }
     }
 }
-
 export function login_in(obj) {
-    setStore("username",obj.username)
     return  dispatch=>{
                 //pending  正在进行登录的状态
                 dispatch({

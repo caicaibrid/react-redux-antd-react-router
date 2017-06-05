@@ -12,9 +12,9 @@ class Base extends Component {
     render() {
         return (
             <Layout id="components-layout-demo-side" className="ant-layout-has-sider">
-                <Left collapsed={this.props.collapsed}/>
+                <Left collapsed={this.props.collapsed} current={this.props.current} openKeys={this.props.openKeys}/>
                 <Layout>
-                    <Top username={this.props.username}/>
+                    <Top />
                     <Middle content={this.props.children}/>
                     <Bottom />
                 </Layout>

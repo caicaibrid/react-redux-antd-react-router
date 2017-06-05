@@ -6,7 +6,7 @@ export const setStore = (name, content,flag="local") => {
 	if (typeof content !== 'string') {
 		content = JSON.stringify(content);
 	}
-	flag === "local"?window.localStorage.setItem(name, content):window.sessionStorage.setItem(name,content);
+	flag === "local"?localStorage.setItem(name, content):sessionStorage.setItem(name,content);
 }
 
 /**
@@ -14,7 +14,7 @@ export const setStore = (name, content,flag="local") => {
  */
 export const getStore = (name,flag="local") => {
 	if (!name) return;
-	return flag === "local"?window.localStorage.getItem(name):window.sessionStorage.getItem(name);
+	return flag === "local"?localStorage.getItem(name):sessionStorage.getItem(name);
 }
 
 /**
@@ -22,5 +22,11 @@ export const getStore = (name,flag="local") => {
  */
 export const removeStore = (name,flag="local") => {
 	if (!name) return;
-	flag === "local"?window.localStorage.reomveItem(name):window.sessionStorage.reomveItem(name);;
+	flag === "local"?localStorage.removeItem(name):sessionStorage.reomveItem(name);
+}
+/**
+ * 清空Storage
+ */
+export const clearStore = (flag="local") => {
+    flag === "local"?localStorage.clear():sessionStorage.clear();
 }

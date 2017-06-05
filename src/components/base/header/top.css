@@ -1,5 +1,6 @@
 .login-status{
-    line-height: 64px;
+    line-height: 63px;
+    border-bottom: 0;
 }
 .login-status img{
     width: 35px;

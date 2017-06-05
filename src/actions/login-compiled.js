@@ -27,9 +27,7 @@ function getLoginState() {
         };
     }
 }
-
 function login_in(obj) {
-    (0, _storage.setStore)("username", obj.username);
     return function (dispatch) {
         //pending  正在进行登录的状态
         dispatch({

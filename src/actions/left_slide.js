@@ -1,25 +1,29 @@
 /**
  * Created by Administrator on 2017/6/3 0003.
  */
-import {COLLAPSED_STATE_HIDE,COLLAPSED_STATE_SHOW} from "./actionTypes"
+import {COLLAPSED_STATUS,LEFT_SLIDE_CHECKED} from "./actionTypes"
+import {getStore,setStore} from "../utils/storage"
 
 /*获取侧边栏的状态*/
 export function collapsed_status(collapsed) {
-    let status=false;
-    if(collapsed!==undefined){
-        status = typeof collapsed==="boolean"&&!collapsed;
-    }else {
-        status = (document.documentElement.clientWidth<640?true:false);
+    return {
+        type:COLLAPSED_STATUS
     }
-    if (status){
-        return {
-            type:COLLAPSED_STATE_HIDE,
-            collapsed:true
-        }
-    }else {
-        return {
-            type:COLLAPSED_STATE_SHOW,
-            collapsed:false
-        }
+}
+
+/*侧边栏默认显示哪个*/
+export function left_slide_checked(value) {
+    let {current,openKeys} = value;
+    let store_left_slide = getStore("left_slide_checked");
+    let left_slide_checked = Object.assign(
+        {},
+        (store_left_slide&&JSON.parse(store_left_slide)) || {},
+        value
+    );
+    setStore("left_slide_checked",JSON.stringify(left_slide_checked));
+    return {
+        type:LEFT_SLIDE_CHECKED,
+        current,
+        openKeys
     }
 }
