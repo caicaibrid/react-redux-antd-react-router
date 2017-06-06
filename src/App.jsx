@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from "./components/Button"
+import head from "./images/head.gif"
 
 class App extends Component {
   state = {
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src="./images/head.gif" className="App-logo" alt="logo" />
+          <img src={head} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
