@@ -1,4 +1,4 @@
-let baseUrl = (process.env.NODE_ENV === "development"?"http://192.168.2.239:8080":"http://www.baidu.com");
+let baseUrl = (process.env.NODE_ENV === "development"?"":"http://www.baidu.com");
 
 export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
 	type = type.toUpperCase();

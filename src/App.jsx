@@ -8,7 +8,7 @@ class App extends Component {
   increment=()=>{
     this.setState({count: this.state.count + 1})
   }
-  componentDidMount = ()=>{
+  componentDidMount(){
     console.log("componentDidMount = Dom 已经渲染完毕,可以在此发起ajax请求,操作dom -----父组件")
     console.log(process.env.NODE_ENV)
   }
